@@ -43,14 +43,15 @@ public class FoodPlace implements Serializable {
   @JoinColumn(name = "type_id", referencedColumnName = "id", nullable = false)
   private FoodPlaceType type;
 
+  @ManyToOne
+  @JoinColumn(name = "address_id", referencedColumnName = "id")
+  private Address addresses;
+
   @OneToMany(mappedBy = "foodPlace")
   private Set<ImageUrl> images = new HashSet<>();
 
   @OneToMany(mappedBy = "foodPlace")
   private Set<Comment> comments = new HashSet<>();
-
-  @OneToMany(mappedBy = "foodPlace")
-  private Set<Address> addresses = new HashSet<>();
 
   public Long getId() {
     return id;
@@ -116,14 +117,6 @@ public class FoodPlace implements Serializable {
     this.description = description;
   }
 
-  public Set<Address> getAddresses() {
-    return addresses;
-  }
-
-  public void setAddresses(Set<Address> addresses) {
-    this.addresses = addresses;
-  }
-
   public SimpleRate getFoodRate() {
     return foodRate;
   }
@@ -138,6 +131,14 @@ public class FoodPlace implements Serializable {
 
   public void setPriceRate(PriceRateSimple priceRate) {
     this.priceRate = priceRate;
+  }
+
+  public Address getAddresses() {
+    return addresses;
+  }
+
+  public void setAddresses(Address addresses) {
+    this.addresses = addresses;
   }
 
   @Override

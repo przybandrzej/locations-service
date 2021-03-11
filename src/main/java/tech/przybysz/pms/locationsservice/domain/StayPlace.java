@@ -61,14 +61,15 @@ public class StayPlace implements Serializable {
   @JoinColumn(name = "type_id", referencedColumnName = "id", nullable = false)
   private StayPlaceType type;
 
+  @ManyToOne
+  @JoinColumn(name = "address_id", referencedColumnName = "id")
+  private Address addresses;
+
   @OneToMany(mappedBy = "stayPlace")
   private Set<ImageUrl> images = new HashSet<>();
 
   @OneToMany(mappedBy = "stayPlace")
   private Set<Comment> comments = new HashSet<>();
-
-  @OneToMany(mappedBy = "stayPlace")
-  private Set<Address> addresses = new HashSet<>();
 
   public Long getId() {
     return id;
@@ -134,11 +135,11 @@ public class StayPlace implements Serializable {
     this.description = description;
   }
 
-  public Set<Address> getAddresses() {
+  public Address getAddresses() {
     return addresses;
   }
 
-  public void setAddresses(Set<Address> addresses) {
+  public void setAddresses(Address addresses) {
     this.addresses = addresses;
   }
 

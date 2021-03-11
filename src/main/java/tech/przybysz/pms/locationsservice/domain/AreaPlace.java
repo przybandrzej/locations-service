@@ -31,7 +31,7 @@ public class AreaPlace implements Serializable {
   private LocalDateTime modified;
 
   @Column(name = "area")
-  private Long area;
+  private Double area;
 
   @Enumerated(EnumType.STRING)
   @Column(name = "unit")
@@ -92,11 +92,11 @@ public class AreaPlace implements Serializable {
     this.modified = modified;
   }
 
-  public Long getArea() {
+  public Double getArea() {
     return area;
   }
 
-  public void setArea(Long area) {
+  public void setArea(Double area) {
     this.area = area;
   }
 
