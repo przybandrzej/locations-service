@@ -16,7 +16,7 @@ public class ImageUrl implements Serializable {
   @Column(name = "url")
   private String url;
 
-  @Column(name = "order")
+  @Column(name = "applying_order")
   private Float order;
 
   @ManyToOne
