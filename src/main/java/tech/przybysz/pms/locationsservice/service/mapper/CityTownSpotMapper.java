@@ -8,7 +8,7 @@ import tech.przybysz.pms.locationsservice.service.dto.CityTownSpotDTO;
 /**
  * Mapper for the entity {@link CityTownSpot} and its DTO {@link CityTownSpotDTO}.
  */
-@Mapper(componentModel = "spring", uses = {CityTownSpotMapper.class})
+@Mapper(componentModel = "spring", uses = {})
 public interface CityTownSpotMapper extends EntityMapper<CityTownSpotDTO, CityTownSpot> {
 
   @Mapping(source = "parent.id", target = "parentId")

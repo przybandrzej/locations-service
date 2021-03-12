@@ -63,7 +63,7 @@ public class StayPlace implements Serializable {
 
   @ManyToOne
   @JoinColumn(name = "address_id", referencedColumnName = "id")
-  private Address addresses;
+  private Address address;
 
   @OneToMany(mappedBy = "stayPlace")
   private Set<ImageUrl> images = new HashSet<>();
@@ -135,12 +135,12 @@ public class StayPlace implements Serializable {
     this.description = description;
   }
 
-  public Address getAddresses() {
-    return addresses;
+  public Address getAddress() {
+    return address;
   }
 
-  public void setAddresses(Address addresses) {
-    this.addresses = addresses;
+  public void setAddress(Address address) {
+    this.address = address;
   }
 
   public SimpleRate getPeaceRate() {

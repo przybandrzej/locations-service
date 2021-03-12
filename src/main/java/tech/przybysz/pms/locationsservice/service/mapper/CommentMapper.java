@@ -8,7 +8,7 @@ import tech.przybysz.pms.locationsservice.service.dto.CommentDTO;
 /**
  * Mapper for the entity {@link Comment} and its DTO {@link CommentDTO}.
  */
-@Mapper(componentModel = "spring", uses = {AreaPlaceTypeMapper.class, FoodPlaceMapper.class, StayPlaceMapper.class, PointLocationMapper.class})
+@Mapper(componentModel = "spring", uses = {AreaPlaceMapper.class, FoodPlaceMapper.class, StayPlaceMapper.class, PointLocationMapper.class})
 public interface CommentMapper extends EntityMapper<CommentDTO, Comment> {
 
   @Mapping(source = "areaPlace.id", target = "areaPlaceId")

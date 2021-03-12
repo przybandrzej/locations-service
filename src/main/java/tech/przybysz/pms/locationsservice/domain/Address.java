@@ -20,16 +20,8 @@ public class Address implements Serializable {
   private String lineTwo;
 
   @ManyToOne
-  @JoinColumn(name = "city_town_spot_id", referencedColumnName = "id")
+  @JoinColumn(name = "city_town_spot_id", referencedColumnName = "id", nullable = false)
   private CityTownSpot cityTown;
-
-  @ManyToOne
-  @JoinColumn(name = "food_place_id", referencedColumnName = "id")
-  private FoodPlace foodPlace;
-
-  @ManyToOne
-  @JoinColumn(name = "stay_place_id", referencedColumnName = "id")
-  private StayPlace stayPlace;
 
   public Long getId() {
     return id;
@@ -53,22 +45,6 @@ public class Address implements Serializable {
 
   public void setLineTwo(String lineTwo) {
     this.lineTwo = lineTwo;
-  }
-
-  public FoodPlace getFoodPlace() {
-    return foodPlace;
-  }
-
-  public void setFoodPlace(FoodPlace foodPlace) {
-    this.foodPlace = foodPlace;
-  }
-
-  public StayPlace getStayPlace() {
-    return stayPlace;
-  }
-
-  public void setStayPlace(StayPlace stayPlace) {
-    this.stayPlace = stayPlace;
   }
 
   public CityTownSpot getCityTown() {

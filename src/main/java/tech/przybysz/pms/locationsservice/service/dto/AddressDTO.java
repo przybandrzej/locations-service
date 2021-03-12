@@ -5,8 +5,6 @@ public class AddressDTO {
   private String lineOne;
   private String lineTwo;
   private Long cityTownId;
-  private Long foodPlaceId;
-  private Long stayPlaceId;
 
   public Long getId() {
     return id;
@@ -40,22 +38,6 @@ public class AddressDTO {
     this.cityTownId = cityTownId;
   }
 
-  public Long getFoodPlaceId() {
-    return foodPlaceId;
-  }
-
-  public void setFoodPlaceId(Long foodPlaceId) {
-    this.foodPlaceId = foodPlaceId;
-  }
-
-  public Long getStayPlaceId() {
-    return stayPlaceId;
-  }
-
-  public void setStayPlaceId(Long stayPlaceId) {
-    this.stayPlaceId = stayPlaceId;
-  }
-
   @Override
   public String toString() {
     return "AddressDTO{" +
@@ -63,8 +45,6 @@ public class AddressDTO {
         ", lineOne='" + lineOne + '\'' +
         ", lineTwo='" + lineTwo + '\'' +
         ", cityTownId=" + cityTownId +
-        ", foodPlaceId=" + foodPlaceId +
-        ", stayPlaceId=" + stayPlaceId +
         '}';
   }
 }

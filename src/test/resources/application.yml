@@ -1,0 +1,42 @@
+spring:
+  application:
+    name: LocationsService
+  jpa:
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQL95Dialect
+    hibernate:
+      ddl-auto: none
+  datasource:
+    url: jdbc:postgresql://localhost:5432/locations_service
+    username: locations_service
+    password: locations_service
+  messages:
+    basename: i18n/messages
+  thymeleaf:
+    enabled: true
+    check-template-location: true
+    prefix: classpath:/templates/
+    suffix: .html
+    mode: HTML
+    encoding: UTF-8
+    cache: true
+  task:
+    execution:
+      thread-name-prefix: locations-service-task-
+      pool:
+        core-size: 2
+        max-size: 50
+        queue-capacity: 10000
+    scheduling:
+      thread-name-prefix: locations-service-scheduling-
+      pool:
+        size: 2
+
+logging:
+  level:
+    ROOT: INFO
+    tech.przybysz.pms.filemanager: DEBUG
+
+server:
+  port: 8083
