@@ -17,4 +17,8 @@ public interface PointLocationService {
   Optional<PointLocationDTO> findOne(Long id);
 
   void delete(Long id);
+
+  List<PointLocationDTO> findAllOfAreaPlace(Long id);
+
+  List<PointLocationDTO> findAllOfType(Long id);
 }

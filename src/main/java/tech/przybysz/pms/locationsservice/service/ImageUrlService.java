@@ -17,4 +17,12 @@ public interface ImageUrlService {
   Optional<ImageUrlDTO> findOne(Long id);
 
   void delete(Long id);
+
+  List<ImageUrlDTO> findAllOfAreaPlace(Long id);
+
+  List<ImageUrlDTO> findAllOfFoodPlace(Long id);
+
+  List<ImageUrlDTO> findAllOfStayPlace(Long id);
+
+  List<ImageUrlDTO> findAllOfPointLocation(Long id);
 }

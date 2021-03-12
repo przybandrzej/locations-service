@@ -110,4 +110,9 @@ public class FoodPlaceServiceImpl implements FoodPlaceService {
 
     repository.deleteById(id);
   }
+
+  @Override
+  public List<FoodPlaceDTO> findAllOfAddress(Long addressId) {
+    return repository.findAllByAddressId(addressId).stream().map(mapper::toDto).collect(Collectors.toList());
+  }
 }

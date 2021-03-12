@@ -17,4 +17,6 @@ public interface CityTownSpotService {
   Optional<CityTownSpotDTO> findOne(Long id);
 
   void delete(Long id);
+
+  List<CityTownSpotDTO> findAllChildren(Long parentId);
 }

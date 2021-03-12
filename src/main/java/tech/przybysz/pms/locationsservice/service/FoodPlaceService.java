@@ -17,4 +17,8 @@ public interface FoodPlaceService {
   Optional<FoodPlaceDTO> findOne(Long id);
 
   void delete(Long id);
+
+  List<FoodPlaceDTO> findAllOfAddress(Long addressId);
+
+  List<FoodPlaceDTO> findAllOfType(Long typeId);
 }

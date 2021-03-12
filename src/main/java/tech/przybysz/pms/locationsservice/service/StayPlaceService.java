@@ -17,4 +17,8 @@ public interface StayPlaceService {
   Optional<StayPlaceDTO> findOne(Long id);
 
   void delete(Long id);
+
+  List<StayPlaceDTO> findAllOfAddress(Long addressId);
+
+  List<StayPlaceDTO> findAllOfType(Long addressId);
 }

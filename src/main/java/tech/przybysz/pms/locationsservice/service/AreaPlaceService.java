@@ -17,4 +17,8 @@ public interface AreaPlaceService {
   Optional<AreaPlaceDTO> findOne(Long id);
 
   void delete(Long id);
+
+  List<AreaPlaceDTO> findAllOfType(Long id);
+
+  List<AreaPlaceDTO> findAllOfSpot(Long id);
 }

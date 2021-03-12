@@ -17,4 +17,6 @@ public interface AddressService {
   Optional<AddressDTO> findOne(Long id);
 
   void delete(Long id);
+
+  List<AddressDTO> findAllOfCityTown(Long id);
 }

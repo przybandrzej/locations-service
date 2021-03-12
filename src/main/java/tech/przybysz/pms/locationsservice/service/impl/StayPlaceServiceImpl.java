@@ -106,4 +106,9 @@ public class StayPlaceServiceImpl implements StayPlaceService {
 
     repository.deleteById(id);
   }
+
+  @Override
+  public List<StayPlaceDTO> findAllOfAddress(Long addressId) {
+    return repository.findAllByAddressId(addressId).stream().map(mapper::toDto).collect(Collectors.toList());
+  }
 }

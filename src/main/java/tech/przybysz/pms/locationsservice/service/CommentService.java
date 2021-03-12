@@ -17,4 +17,12 @@ public interface CommentService {
   Optional<CommentDTO> findOne(Long id);
 
   void delete(Long id);
+
+  List<CommentDTO> findAllOfAreaPlace(Long areaPlaceId);
+
+  List<CommentDTO> findAllOfFoodPlace(Long foodPlaceId);
+
+  List<CommentDTO> findAllOfStayPlace(Long stayPlaceId);
+
+  List<CommentDTO> findAllOfPointLocation(Long pointLocationId);
 }
