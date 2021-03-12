@@ -98,4 +98,9 @@ public class CityTownSpotServiceImpl implements CityTownSpotService {
 
     repository.deleteById(id);
   }
+
+  @Override
+  public List<CityTownSpotDTO> findAllChildren(Long parentId) {
+    return repository.findAllByParentId(parentId).stream().map(mapper::toDto).collect(Collectors.toList());
+  }
 }

@@ -12,7 +12,6 @@ import tech.przybysz.pms.locationsservice.service.exception.DependencyEntityNotF
 import tech.przybysz.pms.locationsservice.service.exception.EntityNotFoundException;
 import tech.przybysz.pms.locationsservice.service.mapper.ImageUrlMapper;
 
-import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
@@ -105,5 +104,25 @@ public class ImageUrlServiceImpl implements ImageUrlService {
       return;
     }
     repository.deleteById(id);
+  }
+
+  @Override
+  public List<ImageUrlDTO> findAllOfAreaPlace(Long id) {
+    return repository.findAllByAreaPlaceId(id).stream().map(mapper::toDto).collect(Collectors.toList());
+  }
+
+  @Override
+  public List<ImageUrlDTO> findAllOfFoodPlace(Long id) {
+    return repository.findAllByFoodPlaceId(id).stream().map(mapper::toDto).collect(Collectors.toList());
+  }
+
+  @Override
+  public List<ImageUrlDTO> findAllOfStayPlace(Long id) {
+    return repository.findAllByStayPlaceId(id).stream().map(mapper::toDto).collect(Collectors.toList());
+  }
+
+  @Override
+  public List<ImageUrlDTO> findAllOfPointLocation(Long id) {
+    return repository.findAllByPointLocationId(id).stream().map(mapper::toDto).collect(Collectors.toList());
   }
 }

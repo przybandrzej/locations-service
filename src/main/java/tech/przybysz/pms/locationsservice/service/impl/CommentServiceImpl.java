@@ -4,10 +4,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-import tech.przybysz.pms.locationsservice.domain.AreaPlaceType;
 import tech.przybysz.pms.locationsservice.domain.Comment;
-import tech.przybysz.pms.locationsservice.domain.FoodPlace;
-import tech.przybysz.pms.locationsservice.domain.StayPlace;
 import tech.przybysz.pms.locationsservice.repository.*;
 import tech.przybysz.pms.locationsservice.service.CommentService;
 import tech.przybysz.pms.locationsservice.service.dto.CommentDTO;
@@ -16,7 +13,6 @@ import tech.przybysz.pms.locationsservice.service.exception.EntityNotFoundExcept
 import tech.przybysz.pms.locationsservice.service.mapper.CommentMapper;
 
 import java.time.LocalDateTime;
-import java.util.Collection;
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
@@ -111,5 +107,25 @@ public class CommentServiceImpl implements CommentService {
       return;
     }
     repository.deleteById(id);
+  }
+
+  @Override
+  public List<CommentDTO> findAllOfAreaPlace(Long areaPlaceId) {
+    return repository.findAllByAreaPlaceId(areaPlaceId).stream().map(mapper::toDto).collect(Collectors.toList());
+  }
+
+  @Override
+  public List<CommentDTO> findAllOfFoodPlace(Long foodPlaceId) {
+    return repository.findAllByFoodPlaceId(foodPlaceId).stream().map(mapper::toDto).collect(Collectors.toList());
+  }
+
+  @Override
+  public List<CommentDTO> findAllOfStayPlace(Long stayPlaceId) {
+    return repository.findAllByStayPlaceId(stayPlaceId).stream().map(mapper::toDto).collect(Collectors.toList());
+  }
+
+  @Override
+  public List<CommentDTO> findAllOfPointLocation(Long pointLocationId) {
+    return repository.findAllByPointLocationId(pointLocationId).stream().map(mapper::toDto).collect(Collectors.toList());
   }
 }

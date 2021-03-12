@@ -96,4 +96,9 @@ public class AddressServiceImpl implements AddressService {
 
     repository.deleteById(id);
   }
+
+  @Override
+  public List<AddressDTO> findAllOfCityTown(Long id) {
+    return repository.findAllByCityTownId(id).stream().map(mapper::toDto).collect(Collectors.toList());
+  }
 }

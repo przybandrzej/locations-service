@@ -5,9 +5,6 @@ import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import tech.przybysz.pms.locationsservice.domain.FoodPlace;
-import tech.przybysz.pms.locationsservice.domain.Comment;
-import tech.przybysz.pms.locationsservice.domain.ImageUrl;
-import tech.przybysz.pms.locationsservice.domain.PointLocation;
 import tech.przybysz.pms.locationsservice.repository.*;
 import tech.przybysz.pms.locationsservice.service.FoodPlaceService;
 import tech.przybysz.pms.locationsservice.service.dto.FoodPlaceDTO;
@@ -16,7 +13,6 @@ import tech.przybysz.pms.locationsservice.service.exception.EntityNotFoundExcept
 import tech.przybysz.pms.locationsservice.service.mapper.FoodPlaceMapper;
 
 import java.time.LocalDateTime;
-import java.util.Collection;
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
@@ -114,5 +110,10 @@ public class FoodPlaceServiceImpl implements FoodPlaceService {
   @Override
   public List<FoodPlaceDTO> findAllOfAddress(Long addressId) {
     return repository.findAllByAddressId(addressId).stream().map(mapper::toDto).collect(Collectors.toList());
+  }
+
+  @Override
+  public List<FoodPlaceDTO> findAllOfType(Long typeId) {
+    return repository.findAllByTypeId(typeId).stream().map(mapper::toDto).collect(Collectors.toList());
   }
 }

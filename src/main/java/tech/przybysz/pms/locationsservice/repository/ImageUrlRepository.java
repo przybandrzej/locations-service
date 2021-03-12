@@ -10,4 +10,10 @@ import java.util.Collection;
 public interface ImageUrlRepository extends JpaRepository<ImageUrl, Long> {
 
   Collection<ImageUrl> findAllByAreaPlaceId(Long areaPlaceId);
+
+  Collection<ImageUrl> findAllByFoodPlaceId(Long id);
+
+  Collection<ImageUrl> findAllByStayPlaceId(Long id);
+
+  Collection<ImageUrl> findAllByPointLocationId(Long id);
 }

@@ -5,8 +5,6 @@ import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import tech.przybysz.pms.locationsservice.domain.AreaPlace;
-import tech.przybysz.pms.locationsservice.domain.Comment;
-import tech.przybysz.pms.locationsservice.domain.ImageUrl;
 import tech.przybysz.pms.locationsservice.domain.PointLocation;
 import tech.przybysz.pms.locationsservice.repository.*;
 import tech.przybysz.pms.locationsservice.service.AreaPlaceService;
@@ -115,5 +113,15 @@ public class AreaPlaceServiceImpl implements AreaPlaceService {
     pointLocationRepository.saveAll(points);
 
     repository.deleteById(id);
+  }
+
+  @Override
+  public List<AreaPlaceDTO> findAllOfType(Long id) {
+    return repository.findAllByTypeId(id).stream().map(mapper::toDto).collect(Collectors.toList());
+  }
+
+  @Override
+  public List<AreaPlaceDTO> findAllOfSpot(Long id) {
+    return repository.findAllBySpotId(id).stream().map(mapper::toDto).collect(Collectors.toList());
   }
 }

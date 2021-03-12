@@ -108,4 +108,14 @@ public class PointLocationServiceImpl implements PointLocationService {
 
     repository.deleteById(id);
   }
+
+  @Override
+  public List<PointLocationDTO> findAllOfAreaPlace(Long id) {
+    return repository.findAllByAreaPlaceId(id).stream().map(mapper::toDto).collect(Collectors.toList());
+  }
+
+  @Override
+  public List<PointLocationDTO> findAllOfType(Long id) {
+    return repository.findAllByTypeId(id).stream().map(mapper::toDto).collect(Collectors.toList());
+  }
 }
