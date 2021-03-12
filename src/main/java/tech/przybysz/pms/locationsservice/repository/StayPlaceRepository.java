@@ -10,4 +10,6 @@ import java.util.Collection;
 public interface StayPlaceRepository extends JpaRepository<StayPlace, Long> {
 
   Collection<StayPlace> findAllByAddressId(Long addressId);
+
+  Collection<StayPlace> findAllByTypeId(Long stayPlaceTypeId);
 }

@@ -1,20 +1,20 @@
 package tech.przybysz.pms.locationsservice.service;
 
 
-import tech.przybysz.pms.locationsservice.service.dto.FoodPlaceTypeDTO;
+import tech.przybysz.pms.locationsservice.service.dto.FoodPlaceDTO;
 
 import java.util.List;
 import java.util.Optional;
 
 public interface FoodPlaceService {
 
-  FoodPlaceTypeDTO create(FoodPlaceTypeDTO foodPlaceTypeDTO);
+  FoodPlaceDTO create(FoodPlaceDTO foodPlaceDTO);
 
-  FoodPlaceTypeDTO update(FoodPlaceTypeDTO foodPlaceTypeDTO);
+  FoodPlaceDTO update(FoodPlaceDTO foodPlaceDTO);
 
-  List<FoodPlaceTypeDTO> findAll();
+  List<FoodPlaceDTO> findAll();
 
-  Optional<FoodPlaceTypeDTO> findOne(Long id);
+  Optional<FoodPlaceDTO> findOne(Long id);
 
   void delete(Long id);
 }

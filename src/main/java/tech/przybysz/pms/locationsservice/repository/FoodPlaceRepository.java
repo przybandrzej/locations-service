@@ -5,10 +5,11 @@ import org.springframework.stereotype.Repository;
 import tech.przybysz.pms.locationsservice.domain.FoodPlace;
 
 import java.util.Collection;
-import java.util.stream.Collectors;
 
 @Repository
 public interface FoodPlaceRepository extends JpaRepository<FoodPlace, Long> {
 
   Collection<FoodPlace> findAllByAddressId(Long addressId);
+
+  Collection<FoodPlace> findAllByTypeId(Long foodPlaceTypeId);
 }

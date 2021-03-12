@@ -10,4 +10,6 @@ import java.util.Collection;
 public interface PointLocationRepository extends JpaRepository<PointLocation, Long> {
 
   Collection<PointLocation> findAllByAreaPlaceId(Long areaPlaceId);
+
+  Collection<PointLocation> findAllByTypeId(Long pointLocationTypeId);
 }

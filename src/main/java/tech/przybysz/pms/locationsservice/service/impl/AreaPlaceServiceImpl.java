@@ -52,7 +52,7 @@ public class AreaPlaceServiceImpl implements AreaPlaceService {
   @Override
   public AreaPlaceDTO create(AreaPlaceDTO areaPlaceDTO) {
     log.debug("Request to get create AreaPlace {}", areaPlaceDTO);
-    if(areaPlaceDTO.getSpotId() == null || !cityTownSpotRepository.existsById(areaPlaceDTO.getSpotId())) {
+    if(areaPlaceDTO.getSpotId() != null && !cityTownSpotRepository.existsById(areaPlaceDTO.getSpotId())) {
       throw new DependencyEntityNotFoundException(ENTITY_NAME, "city-town-spot");
     }
     if(areaPlaceDTO.getTypeId() == null || !areaPlaceTypeRepository.existsById(areaPlaceDTO.getTypeId())) {
@@ -108,10 +108,8 @@ public class AreaPlaceServiceImpl implements AreaPlaceService {
     if(tmp.isEmpty()) {
       return;
     }
-    Collection<Comment> comments = commentRepository.findAllByAreaPlaceId(id);
-    commentRepository.deleteAll(comments);
-    Collection<ImageUrl> images = imageUrlRepository.findAllByAreaPlaceId(id);
-    imageUrlRepository.deleteAll(images);
+    commentRepository.deleteAll(tmp.get().getComments());
+    imageUrlRepository.deleteAll(tmp.get().getImages());
     Collection<PointLocation> points = pointLocationRepository.findAllByAreaPlaceId(id);
     points.forEach(it -> it.setAreaPlace(null));
     pointLocationRepository.saveAll(points);
