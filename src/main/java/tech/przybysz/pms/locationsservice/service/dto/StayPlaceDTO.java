@@ -15,7 +15,7 @@ public class StayPlaceDTO {
   private SimpleRate locationRate;
   private PriceRateSimple priceRate;
   private Boolean petsAllowed;
-  private Boolean hasParking;
+  private Boolean hasCarParking;
   private SimpleRate comfortRate;
   private SimpleRate standardRate;
   private Long typeId;
@@ -93,12 +93,12 @@ public class StayPlaceDTO {
     this.petsAllowed = petsAllowed;
   }
 
-  public Boolean getHasParking() {
-    return hasParking;
+  public Boolean gethasCarParking() {
+    return hasCarParking;
   }
 
-  public void setHasParking(Boolean hasParking) {
-    this.hasParking = hasParking;
+  public void sethasCarParking(Boolean hasCarParking) {
+    this.hasCarParking = hasCarParking;
   }
 
   public SimpleRate getComfortRate() {
@@ -145,7 +145,7 @@ public class StayPlaceDTO {
         ", locationRate=" + locationRate +
         ", priceRate=" + priceRate +
         ", petsAllowed=" + petsAllowed +
-        ", hasParking=" + hasParking +
+        ", hasCarParking=" + hasCarParking +
         ", comfortRate=" + comfortRate +
         ", standardRate=" + standardRate +
         ", typeId=" + typeId +

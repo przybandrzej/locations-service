@@ -46,8 +46,8 @@ public class StayPlace implements Serializable {
   @Column(name = "pets_allowed")
   private Boolean petsAllowed;
 
-  @Column(name = "has_parking")
-  private Boolean hasParking;
+  @Column(name = "has_car_parking")
+  private Boolean hasCarParking;
 
   @Enumerated(EnumType.STRING)
   @Column(name = "comfort_rate")
@@ -175,12 +175,12 @@ public class StayPlace implements Serializable {
     this.petsAllowed = petsAllowed;
   }
 
-  public Boolean getHasParking() {
-    return hasParking;
+  public Boolean gethasCarParking() {
+    return hasCarParking;
   }
 
-  public void setHasParking(Boolean hasParking) {
-    this.hasParking = hasParking;
+  public void sethasCarParking(Boolean hasCarParking) {
+    this.hasCarParking = hasCarParking;
   }
 
   public SimpleRate getComfortRate() {

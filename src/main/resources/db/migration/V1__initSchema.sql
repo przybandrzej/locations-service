@@ -194,20 +194,20 @@ ALTER SEQUENCE point_location_type_id_seq OWNED BY point_location_type.id;
 
 CREATE TABLE stay_place
 (
-    id            bigint NOT NULL,
-    comfort_rate  character varying(255),
-    created       timestamp without time zone,
-    description   character varying(255),
-    has_parking   boolean,
-    location_rate character varying(255),
-    modified      timestamp without time zone,
-    name          character varying(255),
-    peace_rate    character varying(255),
-    pets_allowed  boolean,
-    price_rate    character varying(255),
-    standard_rate character varying(255),
-    address_id    bigint,
-    type_id       bigint NOT NULL
+    id              bigint NOT NULL,
+    comfort_rate    character varying(255),
+    created         timestamp without time zone,
+    description     character varying(255),
+    has_car_parking boolean,
+    location_rate   character varying(255),
+    modified        timestamp without time zone,
+    name            character varying(255),
+    peace_rate      character varying(255),
+    pets_allowed    boolean,
+    price_rate      character varying(255),
+    standard_rate   character varying(255),
+    address_id      bigint,
+    type_id         bigint NOT NULL
 );
 
 CREATE SEQUENCE stay_place_id_seq
