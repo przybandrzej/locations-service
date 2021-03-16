@@ -12,15 +12,18 @@ repositories {
     mavenCentral()
 }
 
-defaultTasks "bootRun"
-
 def activeProfile = 'dev'
+if (project.hasProperty('prod')) {
+    activeProfile = 'prod'
+}
 
-bootRun {
-    if (project.hasProperty('prod')) {
-        activeProfile = 'prod'
+processResources {
+    inputs.property('springProfiles', activeProfile)
+    filesMatching("**/application.yml") {
+        filter {
+            it.replace("#spring.profiles.active#", activeProfile)
+        }
     }
-    systemProperty "spring.profiles.active", activeProfile
 }
 
 dependencies {
