@@ -1,5 +1,5 @@
-locations-service
-
+# locations-service
+## Description  
 Service for collecting data about places. There are 4 types of places in this app:  
  * food place - for places like restaurants, bars and anything related to food. 
  * stay place - for hotels, motels, shelters, bnbs, etc.
